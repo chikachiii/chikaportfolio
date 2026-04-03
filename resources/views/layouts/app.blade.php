@@ -23,6 +23,33 @@
         html {
             scroll-behavior: smooth;
         }
+        /* Disable navigation on mobile portrait as requested */
+        @media screen and (max-width: 768px) and (orientation: portrait) {
+            #navbar .hidden.md\:flex, 
+            #navbar a[href*="projects"],
+            #navbar a[href="{{ route('home') }}"] {
+                pointer-events: none !important;
+                opacity: 0.6;
+                filter: grayscale(1);
+            }
+            #navbar::after {
+                content: "Rotate to Landscape to navigate 📱";
+                position: absolute;
+                bottom: -25px;
+                left: 0;
+                right: 0;
+                text-align: center;
+                font-size: 10px;
+                font-weight: bold;
+                color: #f8bbd0;
+                animation: pulse 2s infinite;
+            }
+        }
+        @keyframes pulse {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
     </style>
 </head>
 <body class="pastel-gradient min-h-screen">
