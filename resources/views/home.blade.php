@@ -28,6 +28,7 @@
     <section id="profile" class="py-32 px-6 relative z-10">
         <div class="max-w-5xl mx-auto">
             <div class="glass-card-purple p-10 md:p-16 text-center reveal border-2 border-white/50 relative overflow-hidden">
+                @if($profile)
                 <!-- Background decorative element -->
                 <div class="absolute -top-24 -right-24 w-64 h-64 bg-soft-pink/10 rounded-full blur-3xl"></div>
                 <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-soft-peach/10 rounded-full blur-3xl"></div>
@@ -75,6 +76,13 @@
                         @endif
                     </div>
                 </div>
+                @else
+                <div class="py-20">
+                    <i class="fas fa-user-circle text-8xl text-soft-pink/30 mb-6"></i>
+                    <h2 class="text-3xl font-bold text-gray-500">Profile data not found.</h2>
+                    <p class="text-gray-400 mt-2">Please run the seeder to initialize your profile.</p>
+                </div>
+                @endif
             </div>
         </div>
     </section>
