@@ -36,7 +36,7 @@
                 <div class="relative w-56 h-56 mx-auto mb-10 group">
                     <div class="w-full h-full rounded-full overflow-hidden border-8 border-white shadow-2xl bg-pastel-pink flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
                         @if($profile->profile_image)
-                            <img src="{{ asset('storage/' . $profile->profile_image) }}" alt="Profile" class="w-full h-full object-cover">
+                            <img src="{{ \Illuminate\Support\Facades\Storage::url($profile->profile_image) }}" alt="Profile" class="w-full h-full object-cover">
                         @else
                             <i class="fas fa-user text-7xl text-white"></i>
                         @endif
