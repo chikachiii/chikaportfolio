@@ -25,7 +25,7 @@
         @forelse($projects as $project)
         <div class="glass-card overflow-hidden group card-hover reveal bg-white/40 border-2 border-white/60">
             <div class="relative h-72 overflow-hidden">
-                <img src="{{ \Illuminate\Support\Facades\Storage::url($project->image) }}" alt="{{ $project->title }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
+                <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
                 <div class="absolute top-6 right-6 bg-white/90 backdrop-blur-md px-5 py-2 rounded-2xl text-sm font-bold text-soft-purple shadow-sm border border-white">
                     {{ $project->type }}
                 </div>
